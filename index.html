@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智耕小塔｜智在家鄉 AI 農業助理平台</title>
+  <meta name="description" content="智在家鄉 × 都市小農 × AI農業助理，結合垂直農業、物聯網、Open Data、即時影像監控與 AI 分析。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <div class="logo">🌱 智耕小塔</div>
+      <div class="links">
+        <a href="#app">App範例</a>
+        <a href="#camera">即時影像</a>
+        <a href="#poster">功能海報</a>
+        <a href="#comic">漫畫解說</a>
+      </div>
+    </nav>
+
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <div class="big-theme">智在家鄉 × 都市小農 × AI農業助理</div>
+        <h1>讓陽台、屋頂、小農地<br>變成智慧菜園</h1>
+        <p class="lead">
+          結合垂直農業、物聯網感測、Open Data、即時影像監控與 AI 分析，
+          讓有限空間也能高效率種植蔬菜、冰花與香草作物。
+        </p>
+        <div class="cta">
+          <a class="btn main" href="#app">體驗 App Demo</a>
+          <a class="btn sub" href="#poster">查看功能海報</a>
+        </div>
+      </div>
+
+      <div class="hero-image card">
+        <img src="assets/function-poster.png" alt="智慧小農場功能海報" />
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section intro">
+      <div class="section-title">
+        <p class="eyebrow">VISION</p>
+        <h2>把農業科技帶進家鄉，也帶進每一個城市角落</h2>
+        <p>從一座小塔開始，讓生活多一點綠，讓農業多一點智慧。</p>
+      </div>
+
+      <div class="intro-cards">
+        <article><b>小農地增產</b><span>四層垂直栽培，提高單位面積產能。</span></article>
+        <article><b>都市綠生活</b><span>陽台、屋頂、室內角落都能種植葉菜。</span></article>
+        <article><b>資料輔助決策</b><span>氣候、水文、環境感測一起進入 AI 判斷。</span></article>
+        <article><b>食農教育</b><span>適合學校、社區、地方創生與 STEAM 課程。</span></article>
+      </div>
+    </section>
+
+    <section id="app" class="section app">
+      <div class="section-title">
+        <p class="eyebrow">APP DEMO</p>
+        <h2>智慧小農場 App 範例</h2>
+        <p>模擬完整農業資訊助理平台：監控、AI建議、紀錄、警示、遠端控制。</p>
+      </div>
+
+      <div class="app-grid">
+        <aside class="phone">
+          <div class="phone-head">
+            <span>智慧小農場</span>
+            <small>● 在線</small>
+          </div>
+
+          <div class="tabs">
+            <button class="tab active" onclick="openTab('overview', this)">首頁</button>
+            <button class="tab" onclick="openTab('ai', this)">AI</button>
+            <button class="tab" onclick="openTab('records', this)">紀錄</button>
+            <button class="tab" onclick="openTab('alerts', this)">警示</button>
+            <button class="tab" onclick="openTab('control', this)">控制</button>
+            <button class="tab" onclick="openTab('data', this)">資料</button>
+          </div>
+
+          <section class="screen active" id="overview">
+            <h3>即時環境</h3>
+            <div class="metrics">
+              <div><b id="temp">26.4°C</b><small>溫度</small></div>
+              <div><b id="hum">68%</b><small>濕度</small></div>
+              <div><b id="lux">420 lux</b><small>光照</small></div>
+              <div><b id="soil">62%</b><small>水分</small></div>
+              <div><b>pH 6.2</b><small>酸鹼值</small></div>
+              <div><b>EC 1.4</b><small>養液濃度</small></div>
+            </div>
+            <div class="mini-card">
+              <b>設備狀態</b>
+              <p>水泵正常｜風扇正常｜LED補光待命｜攝影機在線</p>
+            </div>
+          </section>
+
+          <section class="screen" id="ai">
+            <h3>AI 栽培建議</h3>
+            <label>目前作物</label>
+            <select id="crop">
+              <option>葉菜類（小白菜）</option>
+              <option>冰花</option>
+              <option>萵苣</option>
+              <option>九層塔</option>
+              <option>小番茄</option>
+            </select>
+            <label>想詢問的問題</label>
+            <select id="question">
+              <option value="water">今天需要補水嗎？</option>
+              <option value="light">光照是否足夠？</option>
+              <option value="weather">氣候會影響生長嗎？</option>
+              <option value="harvest">什麼時候可以收成？</option>
+              <option value="disease">葉片異常怎麼辦？</option>
+            </select>
+            <button class="wide" onclick="askAI()">詢問 AI 助理</button>
+            <div class="answer" id="answer">選擇問題後，AI 會根據感測與 Open Data 給出建議。</div>
+          </section>
+
+          <section class="screen" id="records">
+            <h3>歷史紀錄</h3>
+            <div class="chart">
+              <span style="height:38%"></span><span style="height:52%"></span><span style="height:45%"></span><span style="height:62%"></span><span style="height:57%"></span><span style="height:78%"></span><span style="height:72%"></span>
+            </div>
+            <ul class="record-list">
+              <li>05/19 09:00 溫度 26.4°C，濕度 68%</li>
+              <li>05/19 10:30 自動灌溉 35 秒</li>
+              <li>05/19 12:00 光照過強，啟動遮光提醒</li>
+            </ul>
+          </section>
+
+          <section class="screen" id="alerts">
+            <h3>警示通知</h3>
+            <div class="alert blue">💧 土壤濕度過低，建議補水</div>
+            <div class="alert yellow">☀️ 溫度過高，請注意通風</div>
+            <div class="alert red">⚠️ 水泵異常，請檢查設備</div>
+            <div class="alert green">✅ 作物狀態良好，可維持設定</div>
+          </section>
+
+          <section class="screen" id="control">
+            <h3>遠端控制</h3>
+            <div class="control-list">
+              <button onclick="toggleDevice(this)">水泵：關閉</button>
+              <button onclick="toggleDevice(this)">LED補光：關閉</button>
+              <button onclick="toggleDevice(this)">風扇：關閉</button>
+              <button onclick="toggleDevice(this)">循環模式：關閉</button>
+            </div>
+            <div class="answer">可延伸串接 ESP32、Raspberry Pi、MQTT 或雲端 API。</div>
+          </section>
+
+          <section class="screen" id="data">
+            <h3>Open Data</h3>
+            <div class="data-pill">氣象預報：午後短暫雨</div>
+            <div class="data-pill">降雨機率：45%</div>
+            <div class="data-pill">日照提醒：中午偏強</div>
+            <div class="data-pill">水文警示：無異常</div>
+            <div class="answer">AI 會依據外部資料調整補水、補光與通風建議。</div>
+          </section>
+        </aside>
+
+        <div class="feature-list">
+          <h3>App 功能總覽</h3>
+          <div class="feature"><b>即時監控</b><span>溫度、濕度、光照、水分、pH、EC、設備狀態。</span></div>
+          <div class="feature"><b>即時影像</b><span>遠端觀看作物，搭配 AI 影像辨識判斷葉色與異常。</span></div>
+          <div class="feature"><b>AI 栽培建議</b><span>依作物、環境與天氣資料提出澆水、補光、收成建議。</span></div>
+          <div class="feature"><b>Open Data 串接</b><span>整合氣象預報、降雨、日照、水文與災害警示。</span></div>
+          <div class="feature"><b>異常警示</b><span>水位過低、溫度過高、水泵異常、病蟲害風險即時提醒。</span></div>
+          <div class="feature"><b>遠端控制</b><span>可控制水泵、風扇、LED 補光與排程管理。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="camera" class="section camera-section">
+      <div class="section-title">
+        <p class="eyebrow">LIVE CAMERA</p>
+        <h2>即時影像監控 Demo</h2>
+        <p>展示攝影機監控畫面，可用於遠端查看作物狀況，也能延伸成 AI 影像辨識。</p>
+      </div>
+      <div class="camera-grid">
+        <div class="live-card">
+          <div class="live-bar"><span>● LIVE</span><small>Camera 01｜智慧菜園</small></div>
+          <img src="assets/product-original.jpg" alt="即時影像監控示意">
+          <div class="scan"></div>
+        </div>
+        <div class="ai-detect">
+          <h3>AI 影像分析範例</h3>
+          <p><b>葉色：</b>正常綠色</p>
+          <p><b>生長密度：</b>良好，可持續觀察</p>
+          <p><b>異常判斷：</b>未發現明顯枯黃或缺水</p>
+          <p><b>建議：</b>明日上午補光 2 小時，並檢查上層水槽。</p>
+          <button onclick="refreshCamera()">重新分析影像</button>
+          <div id="cameraMsg" class="answer">等待影像分析結果。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="poster" class="section gallery">
+      <div class="section-title">
+        <p class="eyebrow">POSTER</p>
+        <h2>產品圖片與功能海報</h2>
+      </div>
+      <div class="poster-wrap">
+        <img src="assets/function-poster.png" alt="功能海報">
+      </div>
+      <div class="scenario">
+        <img src="assets/scenario-cards.png" alt="適用場域">
+      </div>
+    </section>
+
+    <section id="comic" class="section gallery">
+      <div class="section-title">
+        <p class="eyebrow">COMIC</p>
+        <h2>漫畫解說功能</h2>
+        <p>用漫畫讓小農、家長、學生與社區民眾快速理解智慧農業設備。</p>
+      </div>
+      <div class="comic-grid">
+        <img src="assets/comic-page-1.png" alt="漫畫第1頁">
+        <img src="assets/comic-page-2.png" alt="漫畫第2頁">
+        <img src="assets/comic-page-3.png" alt="漫畫第3頁">
+      </div>
+    </section>
+
+    <section class="section roadmap">
+      <div class="section-title">
+        <p class="eyebrow">ROADMAP</p>
+        <h2>平台可擴充方向</h2>
+      </div>
+      <div class="timeline">
+        <div><b>1. 設備上線</b><span>感測器、水泵、補光、攝影機整合。</span></div>
+        <div><b>2. 資料串接</b><span>匯入氣象、水文、作物資料與地方環境資料。</span></div>
+        <div><b>3. AI 助理</b><span>提供作物問答、風險預測、栽培排程。</span></div>
+        <div><b>4. 智在家鄉</b><span>協助社區、小農、學校建立智慧蔬菜基地。</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <b>智耕小塔 Smart Grow Tower</b>
+    <span>讓科技回到土地，也讓城市長出菜園。</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
